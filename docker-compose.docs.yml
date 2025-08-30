@@ -1,0 +1,16 @@
+services:
+  docs:
+    image: cc_django_test_local_docs
+    container_name: cc_django_test_local_docs
+    build:
+      context: .
+      dockerfile: ./compose/local/docs/Dockerfile
+    env_file:
+      - ./.envs/.local/.django
+    volumes:
+      - ./docs:/docs:z
+      - ./config:/app/config:z
+      - ./cc_django_test:/app/cc_django_test:z
+    ports:
+      - '9000:9000'
+    command: /start-docs
