@@ -1,0 +1,15 @@
+{
+  "buildAptPackages": ["lsb-release"],
+  "$schema": "https://schema.railpack.com",
+  "steps": {
+    "install": {
+      "commands": ["...", "./utility/install_os_dependencies.sh install"]
+    },
+    "build": {
+      "commands": ["...", "uv run manage.py collectstatic --noinput"]
+    }
+  },
+  "deploy": {
+    "startCommand": "uv run gunicorn config.wsgi:application "
+  }
+}
