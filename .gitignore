@@ -65,6 +65,8 @@ target/
 .venv
 venv/
 ENV/
+.db.env 
+.env 
 
 # Rope project settings
 .ropeproject
@@ -271,3 +273,11 @@ dump.rdb
 cc_django_test/media/
 
 .pytest_cache/
+
+#local database
+*.sqlite3
+*.sqlite
+*.db
+
+#Local compose file 
+docker-compose.pg.yaml
